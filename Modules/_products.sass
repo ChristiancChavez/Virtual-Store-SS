@@ -1,0 +1,46 @@
+.products
+    display: flex
+    flex-flow: column nowrap
+    text-align: center
+    &__title
+        font-family: 'Bungee Inline', cursive
+        display: inline
+        font-size: 36px
+        background: black
+        color: white
+        padding: 2px 0px
+    &-list
+        display: flex
+        justify-content: space-around
+        flex-flow: row wrap
+        &__item
+            text-align: center
+            display: flex
+            justify-content: space-around
+            flex-flow: column nowrap
+            margin: 30px 40px
+            font-family: 'Bungee Inline', cursive
+            &-image
+                width: 130px
+            &-text
+                font-size: 18px
+            &-add
+                border-radius: 20px
+                border-right: black solid 2px
+                border-bottom: black solid 2px
+                border-left: red solid 2px
+                border-top: red solid 2px
+                background: white
+                color: gray
+                cursor: pointer
+                font-size: 10px
+                font-family: 'Bungee Inline', cursive
+                &:hover
+                    background: linear-gradient(to right, red 0%, #222222 100%)
+                    color: white
+                    border: lightgray solid 2px
+
+
+
+
+

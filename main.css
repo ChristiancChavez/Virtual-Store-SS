@@ -1,0 +1,154 @@
+.header {
+  background: linear-gradient(to right, #222222 0%, lightgray 50%, #222222 100%);
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 0px 15px; }
+  .header__language {
+    margin-left: 5px; }
+    .header__language-image {
+      width: 30px;
+      padding-right: 5px; }
+  .header__brand {
+    display: flex;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center; }
+    .header__brand-logo {
+      height: 80px;
+      width: 80px;
+      border-radius: 50px;
+      border-right: solid black 2px;
+      border-left: solid red 2px;
+      margin: 0px 15px; }
+    .header__brand-title {
+      font-family: "Bungee Inline", cursive;
+      font-weight: 500;
+      font-size: 35px;
+      color: white;
+      padding-bottom: 10px; }
+  .header__user {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    align-content: center; }
+    .header__user-login {
+      width: 40px;
+      height: 40px;
+      cursor: pointer; }
+    .header__user-shop {
+      width: 40px;
+      height: 40px;
+      padding-right: 20px;
+      cursor: pointer; }
+
+.mainMenu {
+  display: flex;
+  flex-flow: row nowrap; }
+  .mainMenu-lateralMenu {
+    background: lightgray;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: "Bungee Inline", cursive;
+    text-align: center; }
+    .mainMenu-lateralMenu__filter {
+      border-bottom: 2px solid black;
+      border-right: solid black 2px;
+      font-size: 21px;
+      padding: 20px 10px; }
+      .mainMenu-lateralMenu__filter:hover {
+        background: gray;
+        color: white;
+        cursor: pointer; }
+    .mainMenu-lateralMenu-title {
+      font-size: 25px;
+      background: black;
+      border-bottom: 2px solid black;
+      padding: 15px 11px;
+      color: white;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: row nowrap;
+      align-items: center; }
+      .mainMenu-lateralMenu-title__toggle {
+        align-content: center;
+        cursor: pointer;
+        padding-left: 10px; }
+        .mainMenu-lateralMenu-title__toggle-linebar {
+          height: 3px;
+          width: 30px;
+          background: white;
+          display: block;
+          margin: 4px 0;
+          cursor: pointer; }
+
+.carousel {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-bottom: 30px;
+  margin-top: 4px;
+  position: relative; }
+  .carousel__text {
+    font-size: 35px;
+    padding: 0 15px;
+    font-family: "Bungee Inline", cursive;
+    border-radius: 50px;
+    border-left: solid 3px red;
+    border-right: solid 3px black;
+    position: absolute;
+    bottom: 20px; }
+  .carousel__image {
+    width: 1345px;
+    height: 400px; }
+
+.products {
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center; }
+  .products__title {
+    font-family: "Bungee Inline", cursive;
+    display: inline;
+    font-size: 36px;
+    background: black;
+    color: white;
+    padding: 2px 0px; }
+  .products-list {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap; }
+    .products-list__item {
+      text-align: center;
+      display: flex;
+      justify-content: space-around;
+      flex-flow: column nowrap;
+      margin: 30px 40px;
+      font-family: "Bungee Inline", cursive; }
+      .products-list__item-image {
+        width: 130px; }
+      .products-list__item-text {
+        font-size: 18px; }
+      .products-list__item-add {
+        border-radius: 20px;
+        border-right: black solid 2px;
+        border-bottom: black solid 2px;
+        border-left: red solid 2px;
+        border-top: red solid 2px;
+        background: white;
+        color: gray;
+        cursor: pointer;
+        font-size: 10px;
+        font-family: "Bungee Inline", cursive; }
+        .products-list__item-add:hover {
+          background: linear-gradient(to right, red 0%, #222222 100%);
+          color: white;
+          border: lightgray solid 2px; }
+
+body {
+  margin: 0px; }
+
+/*# sourceMappingURL=main.css.map */
