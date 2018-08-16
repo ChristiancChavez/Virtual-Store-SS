@@ -1,0 +1,36 @@
+.customers
+    background: linear-gradient(to bottom, white 0%, black 20%)
+    display: flex
+    flex-flow: column nowrap
+    font-family: 'Bungee Inline', cursive
+    &__title
+        text-align: center
+        font-size: 36px
+        color: white    
+        margin: 30px
+        padding-top: 5px
+    &-list
+        display: flex
+        justify-content: space-around
+        flex-flow: row wrap
+        margin-top: 10px
+        &-single
+            display: flex
+            justify-content: space-around
+            flex-flow: column nowrap
+            font-family: 'Bungee Inline', cursive
+            text-align: center
+            font-size: 20px
+            &__image
+                width: 150px
+                height: 150px
+                border-radius: 100%
+                border-left: solid 3px red
+                border-right: solid 3px red
+                margin-bottom: 10px
+                align-self: center
+
+            &__name
+                color: white
+            &__sport
+                color: red

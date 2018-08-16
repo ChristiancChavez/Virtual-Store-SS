@@ -1,0 +1,85 @@
+.footer
+    display: flex
+    justify-content: space-around
+    flex-flow: column nowrap
+    font-family: 'Bungee Inline', cursive
+    text-align: center
+    &__title
+        background: linear-gradient(to bottom, black 60%, white 100%)
+        font-size: 36px
+        padding: 25px 0px
+        color: white
+        width: 100%
+        padding-top: 80px
+    &-content
+        display: flex
+        justify-content: space-between
+        flex-flow: row nowrap
+        background-image: url('./Images/footer.jpg')
+        background-repeat: no-repeat
+        background-size: 900px 500px
+        background-position: center
+        margin-left: 100px
+        margin-right: 100px
+.headquarters
+    display: flex
+    text-align: center
+    font-size: 10px
+    flex-flow: column nowrap
+    margin-top: 60px 
+    &__title
+        font-size: 15px
+        margin-bottom: 10px
+    &__single
+        display: flex
+        justify-content: center
+        flex-flow:  row nowrap
+        margin-bottom: 10px
+        &-image
+            width: 20px
+            height: 20px
+            border-radius: 50px
+            border-right: solid black 2px
+            border-left: solid red 2px
+            margin-right: 5px
+            cursor: pointer
+        &-name
+            color: gray
+            font-size: 10px
+            cursor: pointer
+            &:hover
+                color: red
+.networks
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-flow: column nowrap
+    text-align: center
+    &__title
+        font-size: 15px
+        margin-bottom: 10px
+    &__image
+        width: 150px
+        height: 150px
+        cursor: pointer
+    &__inputs
+        display: flex
+        flex-flow: column nowrap
+        margin-bottom: 20px
+        &-input
+            text-align: center
+            border: 2px solid gray
+            padding: 5px
+            margin-bottom: 10px
+            border-radius: 12px
+            &--message  
+                padding-bottom: 50px
+    &__brand
+        &-logo
+            height: 100px
+            width: 100px
+            border-radius: 50px
+            border-right: solid black 2px
+            border-left: solid red 2px
+            margin-top: 170px
+            margin-left: 45px

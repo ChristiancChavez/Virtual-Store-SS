@@ -7,26 +7,32 @@
         flex-flow: column nowrap
         font-family: 'Bungee Inline', cursive
         text-align: center
-        
+        border-bottom-right-radius: 12px
+        border-top-right-radius: 12px
         &__filter
             border-bottom: 2px solid black
             border-right: solid black 2px
             font-size: 21px
             padding: 20px 10px
+            &--cornerBottom
+                border-bottom-right-radius: 12px
+            &--cornerTop
+                border-top-right-radius: 12px
+                border-top: 2px solid black
             &:hover
                 background: gray
                 color: white
                 cursor: pointer
         &-title
             font-size: 25px
-            background: black
-            border-bottom: 2px solid black
-            padding: 15px 11px
+            background: linear-gradient(to bottom, black 50%, white 100%)
+            padding: 20px 11px
             color: white
             display: flex
             justify-content: space-around
             flex-flow: row nowrap
             align-items: center
+            padding-bottom: 20px
             &__toggle
                 align-content: center
                 cursor: pointer
