@@ -1,0 +1,96 @@
+.shopCar
+    background-color: rgba(0, 0, 0, 0.8)
+    position: fixed
+    z-index: 1
+    left: 0
+    top: 0
+    width: 100%
+    height: 100% 
+    &__container
+        display: flex
+        align-content: center
+        flex-flow: column nowrap
+        padding: 10px 15px
+        background: linear-gradient(to bottom, black 65%, white 85%)
+        color: white
+        font-family: 'Bungee Inline', cursive
+        border-radius: 20px
+        position: fixed
+        z-index: 2
+        top: 150px
+        left: 350px
+        border: solid red 2px
+        width: 550px
+        &-buttons
+            display: flex
+            justify-content: space-around
+            flex-flow: row nowrap
+            margin: 30px 0px
+    &__superior
+        display: flex
+        justify-content: center
+        flex-flow: row nowrap
+        text-align: center
+        &-img
+            &-image
+                width: 30px
+                padding-left: 250px
+                cursor: pointer
+        &-text
+            font-size: 20px
+            text-align: center
+    &__buttons
+        display: flex
+        justify-content: space-around
+        flex-flow: row nowrap
+        text-align: center
+        margin: 20px
+        &-button
+            border-radius: 20px
+            border: red solid 2px
+            background: gray
+            color: black
+            cursor: pointer
+            font-size: 10px
+            font-family: 'Bungee Inline', cursive
+            padding: 5px 20px
+            &:hover
+                background: linear-gradient(to right, red 0%, #222222 60%)
+                color: white
+                border: gray solid 2px
+    &__info
+        display: flex
+        flex-flow: column nowrap
+        margin: 5px 0px
+        align-items: center 
+    &__item
+        display: flex
+        flex-flow: row nowrap
+        font-size: 10px
+        font-family: 'Bungee Inline', cursive
+        align-items: center
+        &-image
+            width: 50px
+            margin: 10px 20px
+        &-amount
+            font-family: 'Bungee Inline', cursive
+            border-radius: 18px
+            text-align: center
+            margin: 0px 10px
+            border: solid 1px gray
+            width: 35px
+            padding-left: 5px
+        &-total
+            margin: 0px 10px
+        &-remove
+            width: 15px
+            margin: 0px 10px
+            cursor: pointer
+            margin-left: 15px
+    &__line
+        height: 2px
+        width: 390px
+        background: white
+        display: inline-block
+        margin: 5px 0
+
