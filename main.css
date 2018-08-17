@@ -188,27 +188,44 @@
     margin: 5px 0; }
 
 .carousel {
-  width: 100%;
   height: 400px;
-  display: flex;
-  justify-content: space-around;
-  flex-flow: row nowrap;
-  align-items: center;
-  margin-top: 4px;
-  position: relative; }
+  width: 1350px; }
   .carousel__text {
-    font-size: 40px;
-    padding: 0 15px;
+    font-size: 20px;
     font-family: "Bungee Inline", cursive;
     border-radius: 50px;
     border-left: solid 3px red;
     border-right: solid 3px black;
     position: absolute;
-    bottom: 45px;
-    font-weight: 500; }
+    background-color: rgba(255, 255, 204, 0.3);
+    bottom: 150px;
+    left: 570px;
+    width: 250px;
+    text-align: center; }
   .carousel__image {
-    width: 1345px;
+    position: relative;
+    width: 1350px;
     height: 400px; }
+
+.arrows {
+  position: absolute;
+  left: 40px;
+  bottom: 250px;
+  z-index: 3;
+  display: flex;
+  align-items: center; }
+  .arrows-arrow {
+    width: 30px;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 204, 0.7);
+    padding: 8px;
+    cursor: pointer;
+    border-left: solid 3px red;
+    border-right: solid 3px black; }
+    .arrows-arrow--left {
+      margin-right: 595px; }
+    .arrows-arrow--right {
+      margin-left: 590px; }
 
 .products {
   display: flex;
