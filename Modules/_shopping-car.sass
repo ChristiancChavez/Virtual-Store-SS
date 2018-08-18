@@ -21,11 +21,6 @@
         left: 350px
         border: solid red 2px
         width: 550px
-        &-buttons
-            display: flex
-            justify-content: space-around
-            flex-flow: row nowrap
-            margin: 30px 0px
     &__superior
         display: flex
         justify-content: center
@@ -41,7 +36,7 @@
             text-align: center
     &__buttons
         display: flex
-        justify-content: space-around
+        justify-content: center
         flex-flow: row nowrap
         text-align: center
         margin: 20px
@@ -54,10 +49,19 @@
             font-size: 10px
             font-family: 'Bungee Inline', cursive
             padding: 5px 20px
+            margin-right: 30px
             &:hover
                 background: linear-gradient(to right, red 0%, #222222 60%)
                 color: white
                 border: gray solid 2px
+                &:focus
+                    outline: 0
+        &-total
+            margin-right: 10px
+            color: red
+            &--black
+                color: black    
+                margin-left: 15px
     &__info
         display: flex
         flex-flow: column nowrap
@@ -74,13 +78,18 @@
             margin: 10px 20px
         &-amount
             font-family: 'Bungee Inline', cursive
-            border-radius: 18px
+            font-size: 10px
+            border-radius: 20px
             text-align: center
             margin: 0px 10px
             border: solid 1px gray
-            width: 35px
-            padding-left: 5px
-        &-total
+            padding-left: 13px
+            width: 30px
+            color: white
+            background: black
+            &:focus
+                outline: 0
+        &-subtotal
             margin: 0px 10px
         &-remove
             width: 15px

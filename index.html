@@ -24,6 +24,7 @@
             <div class="header__user">
                 <img class="header__user-login" src="./Images/login.png" alt="">
                 <img class="header__user-shop" src="./Images/shopping-cart.png" alt="">
+                <span class="header__user-amount js-amount-shop">0</span>
             </div>
         </header>
         <div class="shopCar hide js-modal">
@@ -37,17 +38,28 @@
                 <div class="shopCar__info">
                     <div class="shopCar__line"></div>
                     <div class="shopCar__item">
-                        <img class="shopCar__item-image" src="./Images/shoes-skate.jpeg" alt="">
-                        <span class="shopCar__item-text">Vortex II - Skate -- $150</span>
-                        <input class="shopCar__item-amount" type="number" min="1" max="99">
-                        <span class="shopCar__item-total">$150</span>
-                        <img class="shopCar__item-remove" src="./Images/remove.png" alt="">
+                        <img class="shopCar__item-image js-image-shop" src="./Images/shoes-skate.jpeg" alt="">
+                        <span class="shopCar__item-text js-name-shop">Vortex II - Skate --</span>
+                        <span class="shopCar__item-text js-price-shop">$150</span>
+                        <input class="shopCar__item-amount js-amount-shop" type="number" min="1" max="99">
+                        <span class="shopCar__item-subtotal js-subtotal-shop">$150</span>
+                        <img class="shopCar__item-remove js-close-shop" src="./Images/remove.png" alt="">
+                    </div>
+                    <div class="shopCar__item">
+                        <img class="shopCar__item-image js-image-shop" src="./Images/shoes-skate.jpeg" alt="">
+                        <span class="shopCar__item-text js-name-shop">Vortex II - Skate --</span>
+                        <span class="shopCar__item-text js-price-shop">$150</span>
+                        <input class="shopCar__item-amount js-amount-shop" type="number" min="1" max="99">
+                        <span class="shopCar__item-subtotal js-subtotal-shop">$150</span>
+                        <img class="shopCar__item-remove js-close-shop" src="./Images/remove.png" alt="">
                     </div>
                     <div class="shopCar__line"></div>
                 </div>
                 <div class="shopCar__buttons js-btns-modal">
-                    <button class="shopCar__buttons-button js-btn-modal">ADD MORE</button>
-                    <button class="shopCar__buttons-button js-btn-modal">GET NOW!</button>
+                    <button class="shopCar__buttons-button js-btn-add-modal">ADD MORE</button>
+                    <button class="shopCar__buttons-button js-btn-buy-modal">GET NOW!</button>
+                    <span class="shopCar__buttons-total">total</span>
+                    <span class="shopCar__buttons-total--black   js-btn-total-modal">$150</span>
                 </div>
             </div>
         </div>
@@ -83,112 +95,112 @@
                 <div class="products__title"><span class="products__title-text">PRODUCTS</span></div>
                 <div class="products-list">
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/shoes-skate.jpeg" alt="">
-                        <span class="products-list__item-text">Vortex II<br>Skate</span>
-                        <span class="products-list__item-text">$80</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/shoes-skate.jpeg" alt="">
+                        <span class="products-list__item-text js-name-product">Vortex II<br>Skate</span>
+                        <span class="products-list__item-text js-price-product">$80</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/tabla-skate.jpg" alt="">
-                        <span class="products-list__item-text">Table fortex<br>Skate</span>
-                        <span class="products-list__item-text">$200</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/tabla-skate.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Table fortex<br>Skate</span>
+                        <span class="products-list__item-text js-price-product">$200</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/tabla2-skate.jpg" alt="">
-                        <span class="products-list__item-text">Table DBZ<br>Skate</span>
-                        <span class="products-list__item-text">$230</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/tabla2-skate.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Table DBZ<br>Skate</span>
+                        <span class="products-list__item-text js-price-product">$230</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/shoes-snow.jpg" alt="">
-                        <span class="products-list__item-text">Furious<br>Snowboard</span>
-                        <span class="products-list__item-text">$120</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/shoes-snow.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Furious<br>Snowboard</span>
+                        <span class="products-list__item-text js-price-product">$120</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/glove-snow.jpg" alt="">
-                        <span class="products-list__item-text">Gloves TRX<br>Snowboard</span>
-                        <span class="products-list__item-text">$50</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/glove-snow.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Gloves TRX<br>Snowboard</span>
+                        <span class="products-list__item-text js-price-product">$50</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/table-snow.jpg" alt="">
-                        <span class="products-list__item-text">Table AK<br>Snowboard</span>
-                        <span class="products-list__item-text">$320</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/table-snow.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Table AK<br>Snowboard</span>
+                        <span class="products-list__item-text js-price-product">$320</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/guayos1.jpg" alt="">
-                        <span class="products-list__item-text">Mercurial<br>Soccer</span>
-                        <span class="products-list__item-text">$220</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/guayos1.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Mercurial<br>Soccer</span>
+                        <span class="products-list__item-text js-price-product">$220</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/guayos2.jpg" alt="">
-                        <span class="products-list__item-text">Mercurial Blue<br>Soccer</span>
-                        <span class="products-list__item-text">$225</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/guayos2.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Mercurial Blue<br>Soccer</span>
+                        <span class="products-list__item-text js-price-product">$225</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/guayos3.jpg" alt="">
-                        <span class="products-list__item-text">Mercurial Barca<br>Soccer</span>
-                        <span class="products-list__item-text">$240</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/guayos3.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Mercurial Barca<br>Soccer</span>
+                        <span class="products-list__item-text js-price-product">$240</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/ski.jpg" alt="">
-                        <span class="products-list__item-text">Ski Sky<br>Skiing</span>
-                        <span class="products-list__item-text">$1000</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/ski.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Ski Sky<br>Skiing</span>
+                        <span class="products-list__item-text js-price-product">$1000</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/casco-ski.jpg" alt="">
-                        <span class="products-list__item-text">Helmet Sky<br>Skiing</span>
-                        <span class="products-list__item-text">$200</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/casco-ski.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Helmet Sky<br>Skiing</span>
+                        <span class="products-list__item-text js-price-product">$200</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/casco2-ski.jpg" alt="">
-                        <span class="products-list__item-text">Helmet Sky<br>Skiing</span>
-                        <span class="products-list__item-text">$215</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/casco2-ski.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Helmet Sky<br>Skiing</span>
+                        <span class="products-list__item-text js-price-product">$215</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/jacket1-sailing.jpg" alt="">
-                        <span class="products-list__item-text">Jacket I<br>Sailing</span>
-                        <span class="products-list__item-text">$300</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/jacket1-sailing.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Jacket I<br>Sailing</span>
+                        <span class="products-list__item-text js-price-product">$300</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/jacket2-sailing.jpg" alt="">
-                        <span class="products-list__item-text">Jacket II<br>Sailing</span>
-                        <span class="products-list__item-text">$300</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/jacket2-sailing.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Jacket II<br>Sailing</span>
+                        <span class="products-list__item-text js-price-product">$300</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/jacket3-sailing.jpg" alt="">
-                        <span class="products-list__item-text">Jacket III<br>Sailing</span>
-                        <span class="products-list__item-text">$300</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/jacket3-sailing.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Jacket III<br>Sailing</span>
+                        <span class="products-list__item-text js-price-product">$300</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/licra-surf.jpg" alt="">
-                        <span class="products-list__item-text">Wave LX<br>Surf</span>
-                        <span class="products-list__item-text">$310</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/licra-surf.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Wave LX<br>Surf</span>
+                        <span class="products-list__item-text js-price-product">$310</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/licrap-surf.jpg" alt="">
-                        <span class="products-list__item-text">Wave Lx<br>Surf</span>
-                        <span class="products-list__item-text">$100</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/licrap-surf.jpg" alt="">
+                        <span class="products-list__item-text js-price-product">Wave Lx<br>Surf</span>
+                        <span class="products-list__item-text js-price-product">$100</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                     <div class="products-list__item">
-                        <img class="products-list__item-image" src="./Images/pantaloneta-surf.jpg" alt="">
-                        <span class="products-list__item-text">Quick<br>Surf</span>
-                        <span class="products-list__item-text">$80</span>
-                        <button class="products-list__item-add">Add to Car</button>
+                        <img class="products-list__item-image js-imagen-product" src="./Images/pantaloneta-surf.jpg" alt="">
+                        <span class="products-list__item-text js-name-product">Quick<br>Surf</span>
+                        <span class="products-list__item-text js-price-product">$80</span>
+                        <button class="products-list__item-add js-btn-add-product">Add to Car</button>
                     </div>
                 </div>
             </section>
