@@ -49,8 +49,18 @@ $( document ).ready(function(){
     $arrowRight.click(moveRight);
 
 
-    
+    $toggleFilters = $('.js-toggle');
+    $filterContain = $('.js-filters');
 
+    function hideShowFilters(){
+        if($filterContain.hasClass('lateralSlide')){
+            $filterContain.removeClass('lateralSlide')
+        } else {
+            $filterContain.addClass('lateralSlide');
+        }  
+    };
+
+    $toggleFilters.click(hideShowFilters);
 
 
 });

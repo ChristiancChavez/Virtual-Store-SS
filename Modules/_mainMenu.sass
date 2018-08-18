@@ -1,15 +1,40 @@
 .mainMenu
     display: flex
     flex-flow: row nowrap
-    &-lateralMenu
+    font-family: 'Bungee Inline', cursive
+.lateralMenu
+    &__title
+        font-size: 25px
+        background: linear-gradient(to bottom, black 50%, white 100%)
+        padding: 30px 11px
+        color: white
+        display: flex
+        justify-content: space-around
+        flex-flow: row nowrap
+        align-items: center
+        padding: 45px
+    &__toggle
+        align-content: center
+        cursor: pointer
+        padding-left: 10px
+        &-linebar
+            height: 3px
+            width: 30px
+            background: white
+            display: block
+            margin: 2px 0
+            cursor: pointer
+    &__filters
         background: lightgray
         display: flex
         flex-flow: column nowrap
-        font-family: 'Bungee Inline', cursive
         text-align: center
         border-bottom-right-radius: 12px
         border-top-right-radius: 12px
-        &__filter
+        position: absolute
+        right: 1349px
+        transition: 2s
+        &-filter
             border-bottom: 2px solid black
             border-right: solid black 2px
             font-size: 21px
@@ -23,27 +48,6 @@
                 background: gray
                 color: white
                 cursor: pointer
-        &-title
-            font-size: 25px
-            background: linear-gradient(to bottom, black 50%, white 100%)
-            padding: 20px 11px
-            color: white
-            display: flex
-            justify-content: space-around
-            flex-flow: row nowrap
-            align-items: center
-            padding-bottom: 20px
-            &__toggle
-                align-content: center
-                cursor: pointer
-                padding-left: 10px
-                &-linebar
-                    height: 3px
-                    width: 30px
-                    background: white
-                    display: block
-                    margin: 4px 0
-                    cursor: pointer
-        
-
+    
+    
 

@@ -47,50 +47,54 @@
 
 .mainMenu {
   display: flex;
-  flex-flow: row nowrap; }
-  .mainMenu-lateralMenu {
-    background: lightgray;
-    display: flex;
-    flex-flow: column nowrap;
-    font-family: "Bungee Inline", cursive;
-    text-align: center;
-    border-bottom-right-radius: 12px;
-    border-top-right-radius: 12px; }
-    .mainMenu-lateralMenu__filter {
-      border-bottom: 2px solid black;
-      border-right: solid black 2px;
-      font-size: 21px;
-      padding: 20px 10px; }
-      .mainMenu-lateralMenu__filter--cornerBottom {
-        border-bottom-right-radius: 12px; }
-      .mainMenu-lateralMenu__filter--cornerTop {
-        border-top-right-radius: 12px;
-        border-top: 2px solid black; }
-      .mainMenu-lateralMenu__filter:hover {
-        background: gray;
-        color: white;
-        cursor: pointer; }
-    .mainMenu-lateralMenu-title {
-      font-size: 25px;
-      background: linear-gradient(to bottom, black 50%, white 100%);
-      padding: 20px 11px;
+  flex-flow: row nowrap;
+  font-family: "Bungee Inline", cursive; }
+
+.lateralMenu__title {
+  font-size: 25px;
+  background: linear-gradient(to bottom, black 50%, white 100%);
+  padding: 30px 11px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+  align-items: center;
+  padding: 45px; }
+.lateralMenu__toggle {
+  align-content: center;
+  cursor: pointer;
+  padding-left: 10px; }
+  .lateralMenu__toggle-linebar {
+    height: 3px;
+    width: 30px;
+    background: white;
+    display: block;
+    margin: 2px 0;
+    cursor: pointer; }
+.lateralMenu__filters {
+  background: lightgray;
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  border-bottom-right-radius: 12px;
+  border-top-right-radius: 12px;
+  position: absolute;
+  right: 1349px;
+  transition: 2s; }
+  .lateralMenu__filters-filter {
+    border-bottom: 2px solid black;
+    border-right: solid black 2px;
+    font-size: 21px;
+    padding: 20px 10px; }
+    .lateralMenu__filters-filter--cornerBottom {
+      border-bottom-right-radius: 12px; }
+    .lateralMenu__filters-filter--cornerTop {
+      border-top-right-radius: 12px;
+      border-top: 2px solid black; }
+    .lateralMenu__filters-filter:hover {
+      background: gray;
       color: white;
-      display: flex;
-      justify-content: space-around;
-      flex-flow: row nowrap;
-      align-items: center;
-      padding-bottom: 20px; }
-      .mainMenu-lateralMenu-title__toggle {
-        align-content: center;
-        cursor: pointer;
-        padding-left: 10px; }
-        .mainMenu-lateralMenu-title__toggle-linebar {
-          height: 3px;
-          width: 30px;
-          background: white;
-          display: block;
-          margin: 4px 0;
-          cursor: pointer; }
+      cursor: pointer; }
 
 .shopCar {
   background-color: rgba(0, 0, 0, 0.8);
@@ -189,7 +193,7 @@
 
 .carousel {
   height: 400px;
-  width: 1350px; }
+  width: 1349px; }
   .carousel__text {
     font-size: 20px;
     font-family: "Bungee Inline", cursive;
@@ -204,20 +208,20 @@
     text-align: center; }
   .carousel__image {
     position: relative;
-    width: 1350px;
+    width: 1349px;
     height: 400px; }
 
 .arrows {
   position: absolute;
   left: 40px;
-  bottom: 250px;
+  bottom: 310px;
   z-index: 3;
   display: flex;
   align-items: center; }
   .arrows-arrow {
     width: 30px;
     border-radius: 50px;
-    background-color: rgba(255, 255, 204, 0.7);
+    background-color: rgba(255, 255, 204, 0.2);
     padding: 8px;
     cursor: pointer;
     border-left: solid 3px red;
@@ -236,7 +240,9 @@
     font-size: 37px;
     background: linear-gradient(to bottom, black 50%, white 100%);
     color: white;
-    padding: 5px 0px; }
+    padding: 15px 0px;
+    padding-top: 45px;
+    padding-right: 80px; }
     .products__title-text {
       padding-right: 130px;
       padding-bottom: 10px; }
@@ -401,5 +407,8 @@ body {
 
 .hide {
   display: none; }
+
+.lateralSlide {
+  right: 1185px; }
 
 /*# sourceMappingURL=main.css.map */
