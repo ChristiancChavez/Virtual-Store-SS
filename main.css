@@ -143,6 +143,72 @@
     .shopCar__superior-text {
       font-size: 20px;
       text-align: center; }
+  .shopCar__info {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 5px 0px;
+    align-items: center;
+    width: 530px; }
+    .shopCar__info-container {
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      margin-left: 10px;
+      padding-top: 10px; }
+  .shopCar__item {
+    display: flex;
+    flex-flow: row nowrap;
+    font-size: 10px;
+    font-family: "Bungee Inline", cursive;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    width: 500px; }
+    .shopCar__item-image {
+      width: 50px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      margin: 0px 3px; }
+    .shopCar__item-text {
+      width: 220px;
+      text-align: center;
+      font-family: "Bungee Inline", cursive;
+      font-size: 10px;
+      margin: 0px 3px; }
+    .shopCar__item-price {
+      text-align: center;
+      font-family: "Bungee Inline", cursive;
+      font-size: 10px;
+      width: 20px;
+      margin: 0px 3px; }
+    .shopCar__item-amount {
+      width: 25px;
+      padding-left: 13px;
+      font-family: "Bungee Inline", cursive;
+      font-size: 10px;
+      border-radius: 20px;
+      text-align: center;
+      border: solid 1px gray;
+      color: white;
+      background: black;
+      margin: 0px 3px; }
+      .shopCar__item-amount:focus {
+        outline: 0; }
+    .shopCar__item-subtotal {
+      width: 45px;
+      text-align: center;
+      font-family: "Bungee Inline", cursive;
+      font-size: 10px; }
+    .shopCar__item-remove {
+      width: 15px;
+      cursor: pointer; }
+  .shopCar__line {
+    height: 2px;
+    width: 530px;
+    background: white;
+    display: inline-block;
+    margin: 5px 0px;
+    margin-left: 20px; }
   .shopCar__buttons {
     display: flex;
     justify-content: center;
@@ -158,83 +224,17 @@
       font-size: 10px;
       font-family: "Bungee Inline", cursive;
       padding: 5px 20px;
-      margin-right: 30px; }
+      margin-right: 30px;
+      outline: 0; }
       .shopCar__buttons-button:hover {
         background: linear-gradient(to right, red 0%, #222222 60%);
         color: white;
         border: gray solid 2px; }
-        .shopCar__buttons-button:hover:focus {
-          outline: 0; }
-    .shopCar__buttons-total {
-      margin-right: 10px;
-      color: red; }
-      .shopCar__buttons-total--black {
-        color: black;
-        margin-left: 15px; }
-  .shopCar__info {
-    display: flex;
-    flex-flow: column nowrap;
-    margin: 5px 0px;
-    align-items: center; }
-  .shopCar__item {
-    display: flex;
-    flex-flow: row nowrap;
-    font-size: 10px;
-    font-family: "Bungee Inline", cursive;
-    align-items: center;
-    width: 370px;
-    justify-content: space-around; }
-    .shopCar__item-image {
-      width: 50px; }
-      .shopCar__item-image--img {
-        margin-bottom: 10px;
-        border-radius: 5px;
-        width: 50px;
-        margin-right: 5px; }
-    .shopCar__item-text {
-      width: 160px;
-      text-align: center; }
-      .shopCar__item-text--txt {
-        font-family: "Bungee Inline", cursive;
-        font-size: 10px; }
-    .shopCar__item-price {
-      text-align: center;
-      font-family: "Bungee Inline", cursive;
-      font-size: 10px;
-      width: 60px;
-      margin-left: 10px; }
-    .shopCar__item-amount {
-      width: 30px; }
-      .shopCar__item-amount:focus {
+      .shopCar__buttons-button:focus {
         outline: 0; }
-      .shopCar__item-amount--input {
-        margin: 0px 10px;
-        padding-left: 13px;
-        font-family: "Bungee Inline", cursive;
-        font-size: 10px;
-        border-radius: 20px;
-        text-align: center;
-        border: solid 1px gray;
-        color: white;
-        background: black; }
-    .shopCar__item-subtotal {
-      margin: 0px 10px;
-      width: 60px;
-      text-align: center;
-      margin-left: 40px; }
-      .shopCar__item-subtotal--number {
-        font-family: "Bungee Inline", cursive;
-        font-size: 10px; }
-    .shopCar__item-remove {
-      width: 15px;
-      margin: 0px 10px;
-      cursor: pointer; }
-  .shopCar__line {
-    height: 2px;
-    width: 390px;
-    background: white;
-    display: inline-block;
-    margin: 5px 0; }
+    .shopCar__buttons-total {
+      color: black;
+      margin-left: 15px; }
 
 .carousel {
   height: 400px;

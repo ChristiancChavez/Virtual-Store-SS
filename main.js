@@ -66,6 +66,7 @@ $( document ).ready(function(){
 
 
     const $itemShopCarModal = $('.js-container-shop');
+    let subtotalFull;
     $addShopCarButton.click(function(){
         $shopCarImage.effect( "shake", {times:2, direction:'up'}, 1000 );
         $amountProducts.text(counterShop += 1);
@@ -76,22 +77,29 @@ $( document ).ready(function(){
         let imageProduct = $singleProduct.find('.js-image-product').attr('src');
         let valueSubtotal = $(this).val();
         let priceProductInteger = parseInt(priceProduct.substring(1,priceProduct.length));
-        let subtotalFull = priceProductInteger * valueSubtotal;
-        $itemShopCarModal.append(`<div class="shopCar__item"><div class="shopCar__item-image"><img class="shopCar__item-image shopCar__item-image--img js-image-shop" src="${imageProduct}" alt=""></div>
-        <div class="shopCar__item-text shopCar__item-text--txt><span class="js-name-shop">${nameProduct}</span></div>
-        <div class="shopCar__item-price shopCar__item-price--tx><span class="js-price-shop">${priceProduct}</span></div>
-        <div class="shopCar__item-amount"><input class="shopCar__item-amount shopCar__item-amount--input js-amount-shop" value="0" type="number" min="1" max="99"></div>
-        <div class="shopCar__item-subtotal">$<span class="shopCar__item-subtotal shopCar__item-subtotal--number js-subtotal-shop"></span></div>
-        <div class="shopCar__item-remove"><img class="shopCar__item-remove js-close-shop" src="./Images/remove.png" alt=""></div></div>`);
+        subtotalFull = priceProductInteger * valueSubtotal;
+        $itemShopCarModal.append(`<div class="shopCar__item"><img class="shopCar__item-image js-image-shop" src="${imageProduct}" alt="">
+        <span class="js-name-shop">${nameProduct}</span>
+        <span class="js-price-shop">${priceProduct}</span>
+        <input class="shopCar__item-amount js-amount-shop" value="1" type="number" min="1" max="99">
+        $<span class="shopCar__item-subtotal js-subtotal-shop">${subtotalFull}</span>
+        <img class="shopCar__item-remove js-cancel-item-shop" src="./Images/remove.png" alt=""></div>`);
 
-        const $amountInputShop = $('.js-amount-shop');
-        let $subtotalInsideShop = $('.js-subtotal-shop');
+        let $cancelItemBtn = $('.js-cancel-item-shop');
+        $cancelItemBtn.click(function(){
+            $(this).parent().remove();
+        })
+    });
+    let numbers = 0;
+    let newPrice;
+    $itemShopCarModal.on('click', '.js-amount-shop', function(){
         
-        $amountInputShop.click(function(){
-            let valueInsideShop = $(this).val();
-            let newPrice = valueInsideShop * subtotalFull;
-            $(this).next().text(newPrice);
-        });
+        let valueInsideShop = $(this).val();
+        let priceProductPrev = $(this).prev().text();
+        let priceProductPrevInt = parseInt(priceProductPrev.substring(1,priceProductPrev.lenght));
+        newPrice = valueInsideShop * priceProductPrevInt;
+        $(this).next().text(newPrice);
+        
     });
 
 
@@ -99,4 +107,18 @@ $( document ).ready(function(){
         $shopCarModal.removeClass('hide');
     })
 
+
+    let $btnCLoseShop = $('.js-close-shop');
+    $btnCLoseShop.click(function(){
+        $shopCarModal.addClass('hide');
+        $amountProducts.text(0);
+        counterShop = 0;
+        $itemShopCarModal.empty();
+    });
+    numbers += newPrice;
+    let $btnTotalShop = $('.js-btn-total-modal');
+    $btnTotalShop.click(function(){
+        $('.js-total-price-modal').text(numbers);
+    });
+    
 });
