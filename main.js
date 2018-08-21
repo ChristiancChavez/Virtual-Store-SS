@@ -67,10 +67,10 @@ $( document ).ready(function(){
 
     const $itemShopCarModal = $('.js-container-shop');
     let subtotalFull;
+    let dataIdClose = 0;
     $addShopCarButton.click(function(){
         $shopCarImage.effect( "shake", {times:2, direction:'up'}, 1000 );
         $amountProducts.text(counterShop += 1);
-
         const $singleProduct = $(this).parent();
         let nameProduct = $singleProduct.find('.js-name-product').text();
         let priceProduct = $singleProduct.find('.js-price-product').text();
@@ -83,25 +83,34 @@ $( document ).ready(function(){
         <span class="js-price-shop">${priceProduct}</span>
         <input class="shopCar__item-amount js-amount-shop" value="1" type="number" min="1" max="99">
         $<span class="shopCar__item-subtotal js-subtotal-shop">${subtotalFull}</span>
-        <img class="shopCar__item-remove js-cancel-item-shop" src="./Images/remove.png" alt=""></div>`);
-
-        let $cancelItemBtn = $('.js-cancel-item-shop');
-        $cancelItemBtn.click(function(){
-            $(this).parent().remove();
-        })
+        <img class="shopCar__item-remove js-cancel-item-shop"data-id="${dataIdClose += 1}" src="./Images/remove.png" alt=""></div>`);
+        $(this).addClass('deactivate');
+        $(this).html('Inside the cart');
+        $(this).attr("disabled", true);
+        $(this).attr('data-id',`${dataIdClose}`);
     });
+
+    $itemShopCarModal.on('click', '.js-cancel-item-shop', function(){
+        let dataId = $(this).data('id');
+        console.log(dataId);
+        $amountProducts.text(counterShop -= 1);
+        const sameBtns = $('.js-single-product').find(`button[data-id ='${dataId}']`);
+        sameBtns.removeClass('deactivate');
+        sameBtns.html('ADD TO CART');
+        sameBtns.attr("disabled", false);
+        $(this).parent().remove();
+    });
+
     let numbers = 0;
     let newPrice;
     $itemShopCarModal.on('click', '.js-amount-shop', function(){
-        
         let valueInsideShop = $(this).val();
         let priceProductPrev = $(this).prev().text();
         let priceProductPrevInt = parseInt(priceProductPrev.substring(1,priceProductPrev.lenght));
         newPrice = valueInsideShop * priceProductPrevInt;
         $(this).next().text(newPrice);
-        
+        numbers += newPrice;
     });
-
 
     $shopCarImage.click(function(){
         $shopCarModal.removeClass('hide');
@@ -115,10 +124,29 @@ $( document ).ready(function(){
         counterShop = 0;
         $itemShopCarModal.empty();
     });
-    numbers += newPrice;
+
     let $btnTotalShop = $('.js-btn-total-modal');
+    let total = 0;
     $btnTotalShop.click(function(){
-        $('.js-total-price-modal').text(numbers);
+        let $subtotals = $('.js-subtotal-shop');
+        $subtotals.each(number => {
+             console.log(number.innerText);
+        // $('.js-total-price-modal').text(total);
+        });
+        
     });
+    
+    let $modalBtnAddItem = $('.js-btn-add-modal');
+    $modalBtnAddItem.click(function(){
+        $shopCarModal.addClass('hide');
+    });
+
+    let $modalBtnBuy = $('.js-btn-buy-modal');
+    $modalBtnBuy.click(function(){
+        let $containerButtons = $('.js-btns-modal');
+        $containerButtons.css({"background":"linear-gradient(to bottom, red 30%, black 60%)", "border-radius":"20px", "color":"white"}, 1000);
+        $containerButtons.html("<h1>Successful Purchase</h1>");
+    });
+
     
 });

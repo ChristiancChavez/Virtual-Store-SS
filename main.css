@@ -304,7 +304,8 @@
       .products-list__item-image {
         width: 150px;
         height: 130px;
-        margin: 0px 20px; }
+        margin: 0px 30px;
+        margin-left: 40px; }
       .products-list__item-text {
         font-size: 18px; }
       .products-list__item-add {
@@ -318,7 +319,7 @@
         cursor: pointer;
         font-size: 10px;
         font-family: "Bungee Inline", cursive;
-        width: 100px;
+        width: 130px;
         margin: 0px 50px; }
         .products-list__item-add:hover {
           background: linear-gradient(to right, red 0%, #222222 80%);
@@ -462,5 +463,9 @@ body {
 
 .lateralSlide {
   right: 1185px; }
+
+.deactivate {
+  background: linear-gradient(to bottom, red 30%, black 60%);
+  cursor: not-allowed; }
 
 /*# sourceMappingURL=main.css.map */
