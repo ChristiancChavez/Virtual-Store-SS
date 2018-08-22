@@ -106,7 +106,8 @@
     .lateralMenu__filters-filter:hover {
       background: gray;
       color: white;
-      cursor: pointer; }
+      cursor: pointer;
+      border: solid 2px red; }
 
 .shopCar {
   background-color: rgba(0, 0, 0, 0.8);
@@ -235,6 +236,8 @@
     .shopCar__buttons-total {
       color: black;
       margin-left: 15px; }
+      .shopCar__buttons-total--red {
+        color: red; }
 
 .carousel {
   height: 400px;
@@ -287,7 +290,8 @@
     color: white;
     padding: 15px 0px;
     padding-top: 45px;
-    padding-right: 80px; }
+    padding-right: 80px;
+    width: 1025px; }
     .products__title-text {
       padding-right: 130px;
       padding-bottom: 10px; }

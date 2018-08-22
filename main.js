@@ -88,11 +88,20 @@ $( document ).ready(function(){
         $(this).html('Inside the cart');
         $(this).attr("disabled", true);
         $(this).attr('data-id',`${dataIdClose}`);
+       
+        let $containerTotal = $('.js-total-price-modal');
+        let $subtotals = $('.js-subtotal-shop');
+        let total = 0;
+        $.each($subtotals, function(){
+           total += parseInt($(this).text());
+
+        });
+        $containerTotal.text(total);
+
     });
 
     $itemShopCarModal.on('click', '.js-cancel-item-shop', function(){
         let dataId = $(this).data('id');
-        console.log(dataId);
         $amountProducts.text(counterShop -= 1);
         const sameBtns = $('.js-single-product').find(`button[data-id ='${dataId}']`);
         sameBtns.removeClass('deactivate');
@@ -103,6 +112,7 @@ $( document ).ready(function(){
 
     let numbers = 0;
     let newPrice;
+    let $containerTotal;
     $itemShopCarModal.on('click', '.js-amount-shop', function(){
         let valueInsideShop = $(this).val();
         let priceProductPrev = $(this).prev().text();
@@ -110,6 +120,13 @@ $( document ).ready(function(){
         newPrice = valueInsideShop * priceProductPrevInt;
         $(this).next().text(newPrice);
         numbers += newPrice;
+        $containerTotal = $('.js-total-price-modal');
+        let $subtotals = $('.js-subtotal-shop');
+        let total = 0;
+        $.each($subtotals, function(){
+           total += parseInt($(this).text());
+        });
+        $containerTotal.text(total);
     });
 
     $shopCarImage.click(function(){
@@ -123,17 +140,13 @@ $( document ).ready(function(){
         $amountProducts.text(0);
         counterShop = 0;
         $itemShopCarModal.empty();
-    });
-
-    let $btnTotalShop = $('.js-btn-total-modal');
-    let total = 0;
-    $btnTotalShop.click(function(){
-        let $subtotals = $('.js-subtotal-shop');
-        $subtotals.each(number => {
-             console.log(number.innerText);
-        // $('.js-total-price-modal').text(total);
-        });
-        
+        $('.js-total-price-modal').empty();
+        const changeAllBtn = $('.js-single-product').find(`button`);
+        if(changeAllBtn.hasClass('deactivate')){
+        changeAllBtn.removeClass('deactivate');
+        changeAllBtn.html('ADD TO CART');
+        changeAllBtn.attr("disabled", false);
+        }
     });
     
     let $modalBtnAddItem = $('.js-btn-add-modal');
@@ -146,6 +159,24 @@ $( document ).ready(function(){
         let $containerButtons = $('.js-btns-modal');
         $containerButtons.css({"background":"linear-gradient(to bottom, red 30%, black 60%)", "border-radius":"20px", "color":"white"}, 1000);
         $containerButtons.html("<h1>Successful Purchase</h1>");
+    });
+
+
+    let $filterOption = $('.js-filter');
+    $filterOption.click(function(){
+        let dataFilter = $(this).data("reference");
+        let $itemsProducts = $('.js-single-product');
+        $itemsProducts.show();
+        if(dataFilter === "all"){
+            $(item).show();
+        }else{
+            $.each($itemsProducts, function(index, item){
+            const sportItem = $(item).data('sport');
+            if (dataFilter !== sportItem) {
+                $(item).hide();
+            }
+            });
+        } 
     });
 
     
