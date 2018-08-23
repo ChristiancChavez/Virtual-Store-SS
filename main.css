@@ -122,7 +122,7 @@
     align-content: center;
     flex-flow: column nowrap;
     padding: 10px 15px;
-    background: linear-gradient(to bottom, black 65%, white 85%);
+    background: black;
     color: white;
     font-family: "Bungee Inline", cursive;
     border-radius: 20px;
@@ -234,7 +234,7 @@
       .shopCar__buttons-button:focus {
         outline: 0; }
     .shopCar__buttons-total {
-      color: black;
+      color: white;
       margin-left: 15px; }
       .shopCar__buttons-total--red {
         color: red; }
@@ -471,5 +471,11 @@ body {
 .deactivate {
   background: linear-gradient(to bottom, red 30%, black 60%);
   cursor: not-allowed; }
+
+.getOff {
+  background-color: rgba(255, 255, 204, 0.7);
+  cursor: not-allowed;
+  color: black;
+  border: solid 2px white; }
 
 /*# sourceMappingURL=main.css.map */

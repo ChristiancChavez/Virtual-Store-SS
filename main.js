@@ -25,9 +25,9 @@ $( document ).ready(function(){
     function moveLeft () {
         if((countImage === 0) && (countText === 0)){
             countImage = images.length -1;
-            countImage = countImage -1;
-            countText = sports.length-1
-            countText = countText -1
+            countImage = countImage;
+            countText = sports.length-1;
+            countText = countText;
         } else {
             countImage = countImage -1;
             countText = countText -1;
@@ -52,7 +52,7 @@ $( document ).ready(function(){
         carouselTextContainer = `<span class="carousel__text js-carousel-text ">${sports[countText]}</span>`;
         $carouselContainer.prepend(divcarousel, carouselTextContainer);
     };
-    setInterval(moveRight, 3000);
+     setInterval(moveRight, 3000);
     $arrowRight.click(moveRight);
 
     function hideShowFilters(){
@@ -68,6 +68,9 @@ $( document ).ready(function(){
     const $itemShopCarModal = $('.js-container-shop');
     let subtotalFull;
     let dataIdClose = 0;
+    let $subtotals;
+    let total;
+    let $containerTotal;
     $addShopCarButton.click(function(){
         $shopCarImage.effect( "shake", {times:2, direction:'up'}, 1000 );
         $amountProducts.text(counterShop += 1);
@@ -89,9 +92,9 @@ $( document ).ready(function(){
         $(this).attr("disabled", true);
         $(this).attr('data-id',`${dataIdClose}`);
        
-        let $containerTotal = $('.js-total-price-modal');
-        let $subtotals = $('.js-subtotal-shop');
-        let total = 0;
+        $containerTotal = $('.js-total-price-modal');
+        $subtotals = $('.js-subtotal-shop');
+        total = 0;
         $.each($subtotals, function(){
            total += parseInt($(this).text());
 
@@ -108,21 +111,23 @@ $( document ).ready(function(){
         sameBtns.html('ADD TO CART');
         sameBtns.attr("disabled", false);
         $(this).parent().remove();
+        $subtotals = $('.js-subtotal-shop');
+        total = 0;
+        $.each($subtotals, function(){
+           total += parseInt($(this).text());
+        });
+        $containerTotal.text(total);
     });
 
-    let numbers = 0;
     let newPrice;
-    let $containerTotal;
     $itemShopCarModal.on('click', '.js-amount-shop', function(){
         let valueInsideShop = $(this).val();
         let priceProductPrev = $(this).prev().text();
         let priceProductPrevInt = parseInt(priceProductPrev.substring(1,priceProductPrev.lenght));
         newPrice = valueInsideShop * priceProductPrevInt;
         $(this).next().text(newPrice);
-        numbers += newPrice;
-        $containerTotal = $('.js-total-price-modal');
-        let $subtotals = $('.js-subtotal-shop');
-        let total = 0;
+        $subtotals = $('.js-subtotal-shop');
+        total = 0;
         $.each($subtotals, function(){
            total += parseInt($(this).text());
         });
@@ -147,18 +152,32 @@ $( document ).ready(function(){
         changeAllBtn.html('ADD TO CART');
         changeAllBtn.attr("disabled", false);
         }
+        $successPurchase.remove();
+        $modalBtnBuy.attr("disabled", false);
+        $modalBtnBuy.removeClass('getOff');
     });
     
+    
+
+    let $modalBtnBuy = $('.js-btn-buy-modal');
+    let $successPurchase;
+    $modalBtnBuy.click(function(){
+        let $containerButtons = $('.js-btns-modal');
+        $containerButtons.parent().find('.js-btns-modal').after('<div class="js-success-purchase"><h1>Successful Purchase</h1></div>')
+        $successPurchase = $('.js-success-purchase');
+        $successPurchase.slideDown("slow");
+        $successPurchase.css({"background":"linear-gradient(to bottom, red 30%, black 60%)", "border-radius":"20px", "color":"white", "text-align":"center", "border":"2px white solid"}, 1000);
+        $successPurchase.html("<h1>Successful Purchase</h1>");
+        $(this).attr("disabled", true);
+        $(this).addClass('getOff');
+    });
+
     let $modalBtnAddItem = $('.js-btn-add-modal');
     $modalBtnAddItem.click(function(){
         $shopCarModal.addClass('hide');
-    });
-
-    let $modalBtnBuy = $('.js-btn-buy-modal');
-    $modalBtnBuy.click(function(){
-        let $containerButtons = $('.js-btns-modal');
-        $containerButtons.css({"background":"linear-gradient(to bottom, red 30%, black 60%)", "border-radius":"20px", "color":"white"}, 1000);
-        $containerButtons.html("<h1>Successful Purchase</h1>");
+        $successPurchase.remove();
+        $modalBtnBuy.attr("disabled", false);
+        $modalBtnBuy.removeClass('getOff');
     });
 
 
